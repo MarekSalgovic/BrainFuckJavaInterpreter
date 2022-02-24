@@ -1,4 +1,4 @@
-package sk.salgovic;
+package sk.salgovic.brainfuck;
 
 public enum Instruction {
     INCREMENT_PTR('>'),  // >

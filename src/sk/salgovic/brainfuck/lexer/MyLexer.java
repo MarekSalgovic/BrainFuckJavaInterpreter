@@ -1,7 +1,7 @@
-package sk.salgovic.lexer;
+package sk.salgovic.brainfuck.lexer;
 
-import sk.salgovic.Instruction;
-import sk.salgovic.exceptions.BrainFuckLexerException;
+import sk.salgovic.brainfuck.Instruction;
+import sk.salgovic.brainfuck.exceptions.BrainFuckLexerException;
 
 
 import java.io.IOException;

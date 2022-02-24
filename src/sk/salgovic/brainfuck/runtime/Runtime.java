@@ -1,6 +1,6 @@
-package sk.salgovic.runtime;
+package sk.salgovic.brainfuck.runtime;
 
-import sk.salgovic.exceptions.BrainFuckRuntimeException;
+import sk.salgovic.brainfuck.exceptions.BrainFuckRuntimeException;
 
 public interface Runtime {
     byte getByte(short index) throws BrainFuckRuntimeException;

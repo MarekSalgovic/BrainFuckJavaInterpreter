@@ -1,9 +1,9 @@
-package sk.salgovic;
+package sk.salgovic.brainfuck;
 
-import sk.salgovic.exceptions.BrainFuckLexerException;
-import sk.salgovic.exceptions.BrainFuckRuntimeException;
-import sk.salgovic.lexer.Lexer;
-import sk.salgovic.runtime.Runtime;
+import sk.salgovic.brainfuck.exceptions.BrainFuckLexerException;
+import sk.salgovic.brainfuck.exceptions.BrainFuckRuntimeException;
+import sk.salgovic.brainfuck.lexer.Lexer;
+import sk.salgovic.brainfuck.runtime.Runtime;
 
 import java.io.BufferedReader;
 import java.io.IOException;

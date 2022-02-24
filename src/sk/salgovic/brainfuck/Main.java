@@ -1,11 +1,12 @@
-package sk.salgovic;
+package sk.salgovic.brainfuck;
 
-import sk.salgovic.exceptions.BrainFuckLexerException;
-import sk.salgovic.exceptions.BrainFuckRuntimeException;
-import sk.salgovic.lexer.Lexer;
-import sk.salgovic.lexer.MyLexer;
-import sk.salgovic.runtime.MyRuntime;
-import sk.salgovic.runtime.Runtime;
+import sk.salgovic.brainfuck.Interpreter;
+import sk.salgovic.brainfuck.exceptions.BrainFuckLexerException;
+import sk.salgovic.brainfuck.exceptions.BrainFuckRuntimeException;
+import sk.salgovic.brainfuck.lexer.Lexer;
+import sk.salgovic.brainfuck.lexer.MyLexer;
+import sk.salgovic.brainfuck.runtime.MyRuntime;
+import sk.salgovic.brainfuck.runtime.Runtime;
 
 import java.io.*;
 
