@@ -1,6 +1,5 @@
 package sk.salgovic.brainfuck;
 
-import sk.salgovic.brainfuck.Interpreter;
 import sk.salgovic.brainfuck.exceptions.BrainFuckLexerException;
 import sk.salgovic.brainfuck.exceptions.BrainFuckRuntimeException;
 import sk.salgovic.brainfuck.lexer.Lexer;
@@ -18,12 +17,14 @@ public class Main {
         }
         try {
             File file = new File(System.getProperty("user.dir") + "/" + args[0]);
-            Reader fr = new FileReader(file);
-            BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+            Reader sourceCodeReader = new FileReader(file);
+
+            Writer w = new BufferedWriter(new OutputStreamWriter(System.out));
+            Reader r = new BufferedReader(new InputStreamReader(System.in));
 
             Runtime runtime = new MyRuntime((short) 1024);
-            Lexer lexer = new MyLexer(fr);
-            Interpreter interpreter = new Interpreter(runtime, br, lexer);
+            Lexer lexer = new MyLexer(sourceCodeReader);
+            Interpreter interpreter = new Interpreter(r, w, lexer, runtime);
 
             interpreter.run();
         } catch (IOException e) {

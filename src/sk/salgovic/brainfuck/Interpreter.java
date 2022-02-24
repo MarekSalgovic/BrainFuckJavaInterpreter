@@ -7,20 +7,24 @@ import sk.salgovic.brainfuck.runtime.Runtime;
 
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.Reader;
+import java.io.Writer;
 
 public class Interpreter {
 
     private final Lexer lexer;
     private final Runtime runtime;
-    private final BufferedReader reader;
+    private final Reader reader;
+    private final Writer writer;
 
     private short index;
     private int loopScopesCount;
 
-    Interpreter(Runtime runtime, BufferedReader reader, Lexer lexer) {
+    Interpreter(Reader reader, Writer writer, Lexer lexer, Runtime runtime) {
         this.runtime = runtime;
         this.lexer = lexer;
         this.reader = reader;
+        this.writer = writer;
         this.index = 0;
         this.loopScopesCount = 0;
     }
@@ -79,8 +83,9 @@ public class Interpreter {
         runtime.setByte(index, data);
     }
 
-    private void doOutput() throws BrainFuckRuntimeException {
-        System.out.print((char) runtime.getByte(index));
+    private void doOutput() throws BrainFuckRuntimeException, IOException {
+        writer.write((char) runtime.getByte(index));
+        writer.flush();
     }
 
 
